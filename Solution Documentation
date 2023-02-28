@@ -1,0 +1,63 @@
+Introduction
+This document outlines the solution that has been designed to address the security issues and compliance requirements identified during the audit of XYZ company's AWS infrastructure. The solution leverages AWS services and best practices to achieve the following objectives:
+
+1.	Divide the AWS infrastructure based on workload.
+2.	Prevent developers from mistakenly provisioning or utilizing other regions that are not authorized by regulations.
+3.	Prevent certain AWS services from being utilized in specific accounts.
+4.	Track all API calls made in all accounts.
+5.	Reduce the number of user accounts created for developers in each sub AWS account.
+6.	Safeguard the infrastructure against malware.
+7.	Automate security checks across all AWS accounts.
+8.	Monitor any changes to resources.
+
+Solution Overview
+The solution comprises the following components:
+1.	AWS Control Tower
+2.	AWS Organizations
+3.	AWS Single Sign-On (SSO)
+4.	Azure AD
+5.	AWS CloudTrail
+6.	AWS Service Control Policies
+7.	Amazon GuardDuty
+8.	AWS Config
+9.	AWS Security Hub
+The components work together to provide a secure and compliant AWS infrastructure for XYZ company.
+
+Detailed Solution Description:
+
+1. AWS Control Tower:
+AWS Control Tower is a service that automates the set-up of a multi-account AWS environment. It helps organizations set up and govern a secure and compliant environment by creating a landing zone that is based on best practices from AWS and its partners. The landing zone is a pre-configured environment that includes a multi-account structure, identity and access management (IAM) controls, and pre-configured security and compliance policies.
+For this solution, a landing zone is created using AWS Control Tower to provide a secure and compliant baseline environment. The landing zone is used as the foundation for the AWS Organizations structure and the AWS SSO configuration.
+
+2. AWS Organizations:
+AWS Organizations is a service that helps manage multiple AWS accounts. It enables the creation of a hierarchy of accounts to facilitate the division of infrastructure based on workload. This hierarchy can be used to apply policies across multiple accounts, making it easier to manage compliance and security requirements.
+For this solution, an AWS Organizations structure is created based on the company's requirements. The structure includes the necessary organization units (OUs) to divide the AWS infrastructure based on workload.
+
+3. AWS Single Sign-On (SSO):
+AWS SSO is a service that enables the management of access to multiple AWS accounts and business applications using a single set of credentials. It provides a simple way to centrally manage access to AWS accounts and business applications, and also provides integrated account management for AWS accounts.
+For this solution, AWS SSO is enabled and used with Azure AD  as the external identity provider to enable the management of access to AWS accounts using a single set of credentials.
+
+4. Azure AD:
+It provides a single sign-on (SSO) experience for users and simplifies the management of access to AWS accounts.
+
+5. AWS CloudTrail:
+AWS CloudTrail is a service that enables the tracking of API calls made to AWS services. It provides visibility into user activity by recording details of every API call made to AWS services.
+For this solution, an AWS Organization cloud trail is created to track all API calls across AWS accounts. This provides visibility into user activity and enables compliance and security auditing.
+
+6. AWS Service Control Policies:
+AWS Service Control Policies (SCPs) are used to apply policies across multiple accounts in an AWS Organization. They enable the control of what AWS services can be used in specific accounts, For this solution, a service control policy is created for each OU based on company requirements. The policy is used to restrict the use of certain AWS services in specific accounts. This helps to ensure that accounts are compliant with regulatory requirements and company policies.
+
+7. Amazon GuardDuty:
+Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior in AWS accounts. It uses machine learning and threat intelligence to identify potential security threats.
+For this solution, GuardDuty is enabled across all AWS Organization accounts. This helps to detect and remediate potential security threats and ensures that the infrastructure is secure and compliant.
+
+8. AWS Config:
+AWS Config is a service that enables the monitoring of resource configurations and changes. It provides a detailed view of resource configuration history and enables the tracking of resource changes.
+For this solution, AWS Config is set up to track any resource changes in the AWS infrastructure. This provides visibility into resource configurations and changes, which enables compliance and security auditing.
+
+9. AWS Security Hub:
+AWS Security Hub is a security service that provides a comprehensive view of security alerts and compliance status across multiple AWS accounts. It aggregates and prioritizes security findings from AWS services and third-party tools.
+For this solution, AWS Security Hub is set up to automate security checks across all AWS Organization accounts. This helps to ensure that the infrastructure is secure and compliant.
+
+Lastly:
+The solution described in this document leverages AWS services and best practices to provide a secure and compliant AWS infrastructure for XYZ company. The use of AWS Control Tower, AWS Organizations, AWS SSO, Azure AD, AWS CloudTrail, AWS Service Control Policies, Amazon GuardDuty, AWS Config, and AWS Security Hub helps to achieve the objectives of dividing the AWS infrastructure based on workload, preventing developers from mistakenly provisioning or utilizing other regions, preventing certain AWS services from being utilized in specific accounts, tracking all API calls made in all accounts, reducing the number of user accounts created for developers in each sub AWS account, safeguarding the infrastructure against malware, automating security checks across all AWS accounts, and monitoring any changes to resources.
