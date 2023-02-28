@@ -1,0 +1,22 @@
+Introduction: The purpose of this proof of concept was to test and verify the functionality of the AWS Account Management Solution designed to help manage AWS accounts at scale. The solution aims to help the company organize their AWS account structure, improve security, and comply with business regulations.
+
+Methodology: 
+To test the solution, I followed the steps outlined in the solution design document. I set up a new AWS account for testing purposes using AWS Free Tier resources and deployed AWS Control Tower using the provided launch template. I then created the necessary organization units in AWS Organizations based on the workload requirements of the company.
+I enabled AWS SSO and integrated it with Azure AD as an external identity provider to manage access to AWS accounts as well as enabled AWS CloudTrail across all AWS Organization accounts to track all API calls happening in all accounts. I also created AWS Service Control Policies for each organization unit to restrict the use of certain AWS services in specific accounts.
+I have then enabled Amazon GuardDuty to detect security threats and set up AWS Config to track resource changes. Finally, I automated security checks using AWS Security Hub.
+
+Results: During testing, I found that the solution was able to meet the requirements of the company, including: 
+-	Dividing the AWS infrastructure based on workload. 
+-	Preventing developers from accidentally provisioning or using other regions. 
+-	Preventing the use of certain AWS services. 
+-	Tracking all API calls happening in all accounts. 
+-	Improving the process of the creation of user accounts for developers/ security auditors. 
+-	Protecting the infrastructure from malware and automating security checks across all AWS accounts.
+
+In summary: 
+Based on my testing and evaluation, I believe that the AWS Account Management Solution is a suitable solution for the company's needs. The solution is able to effectively manage AWS accounts at scale, improve security, and comply with business regulations.
+
+Recommendations: 
+While the solution met the requirements of the company, I recommend that further testing and evaluation be conducted in a production environment to ensure that the solution can handle the company's workload and provide adequate performance. Additionally, I recommend that the company implement regular maintenance and updates to ensure that the solution remains effective and secure over time.
+
+Overall, I believe that the AWS Account Management Solution has the potential to provide significant benefits to the company, and I recommend that the company proceed with the full implementation of the solution.
